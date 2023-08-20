@@ -5,8 +5,8 @@ struct CartPage: View {
     
     func OnDelete(index: IndexSet) {
         let productIdToDelete = cartNVVM.products[index.first!].product_id
-        print("\(productIdToDelete)")
-        cartNVVM.deleteProductFromCart(product_id: 1)
+        print("\(productIdToDelete!)")
+        cartNVVM.deleteProductFromCart(product_id: productIdToDelete!)
     }
     
     func checkProduct(index: Int?){
@@ -112,7 +112,7 @@ struct CartPage: View {
                                                         }
                                                         .buttonStyle(BorderlessButtonStyle())
                                                 
-                                                Text("1")
+                                                Text("\(product.product_count ?? 0 )")
                                                     .font(.system(size: 20))
                                                     .foregroundColor(Color(red: 93/255, green: 93/255, blue: 93/255))
                                                 

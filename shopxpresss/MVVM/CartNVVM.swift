@@ -50,7 +50,7 @@ class CartNVVM: ObservableObject{
     func deleteProductFromCart(product_id: Int){
         
         let UserToken = UserDefaults.standard.string(forKey: "user_token")
-        let url = "http://localhost.102:5002/deleteproductfromcart"
+        let url = "http://localhost:5002/deleteproductfromcart"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(UserToken!)"
         ]
