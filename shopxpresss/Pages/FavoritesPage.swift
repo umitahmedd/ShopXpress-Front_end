@@ -9,10 +9,14 @@ import SwiftUI
 
 struct FavoritesPage: View {
     @ObservedObject var favoritesNVVM = FavoritesNVVM()
+    @ObservedObject var cartMVVM = CartNVVM()
     func ondelete(index: IndexSet){
         let favorite_id = favoritesNVVM.favorites[index.first!].favorite_id
         favoritesNVVM.deleteFavorite(favorite_id: favorite_id!)
-        
+    }
+    func addtocart(product_id: Int ){
+        cartMVVM.addToCart(product_id: product_id)
+        print(product_id)
     }
     var body: some View {
         GeometryReader{ geo in
@@ -23,6 +27,7 @@ struct FavoritesPage: View {
                     VStack(spacing: 0){
                         List{
                             ForEach(favoritesNVVM.favorites, id: \.favorite_id){favorite in
+                                let favorite_product_id = favorite.product_id;
                                 VStack{
                                     HStack(spacing: 14){
                                         VStack{
@@ -40,13 +45,13 @@ struct FavoritesPage: View {
                                         VStack(alignment: .leading, spacing: 10){
                                             VStack(alignment: .leading,spacing: 3){
                                                 HStack{
-                                                    Text("Iphone X")
+                                                    Text(favorite.product_name!)
                                                         .fontWeight(.semibold)
                                                         .font(.system(size: 20))
                                                 }
                                                 
                                                 VStack{
-                                                    Text("Lorem ipdum dolor sit amet consectetur adipiscing elit sed do")
+                                                    Text(favorite.product_description!)
                                                         .lineLimit(1)
                                                 }
                                                 
@@ -70,12 +75,13 @@ struct FavoritesPage: View {
                                                     Text("$")
                                                         .font(.system(size: 20))
                                                         .fontWeight(.semibold)
-                                                    Text("299.99")
+                                                    Text(favorite.product_price!)
                                                         .foregroundColor(Color(red: 93/255, green: 93/255, blue: 93/255))
                                                 }
                                                 
                                                 HStack{
                                                     Button(action: {
+                                                        addtocart(product_id: favorite_product_id!)
                                                             }) {
                                                                 Text("Add to cart")
                                                                     .padding(.vertical, 10)

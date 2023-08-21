@@ -103,7 +103,7 @@ struct CartPage: View {
                                                 .frame(height: 0)
                                             HStack {
                                                 Button(action: {
-                                                            checkProduct(index: 0)
+                                                    cartNVVM.ReduceProductFromCart(product_id: product.product_id!)
                                                         }) {
                                                             Image(systemName: "minus.circle")
                                                                 .font(.system(size: 25))

@@ -77,6 +77,75 @@ class CartNVVM: ObservableObject{
             }
         }
     }
+    
+    func addToCart(product_id: Int){
+        let UserToken = UserDefaults.standard.string(forKey: "user_token")
+        let url = "http://localhost:5002/addtocart"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(UserToken!)"
+        ]
+        let body: [String : Any] = [
+            "product_id" : product_id
+        ]
+        
+        AF.request(url, method: .post,  parameters: body, encoding: JSONEncoding.default, headers: headers).responseDecodable(of: ResMessage.self){ response in
+            if let resVal =  response.value{
+                switch response.response?.statusCode{
+                case 200:
+                    print("successful 200 \(resVal.message)")
+                    
+                case 404:
+                    print("unsuccessful 404 \(resVal.message)")
+                    
+                case 500:
+                    print("unsuccessful 500 \(resVal.message)")
+                    
+                default:
+                    print("something went wrong")
+                }
+            }
+            else{
+                print("respone.value undefined")
+            }
+        }
+        
+    }
+    
+    func ReduceProductFromCart(product_id: Int){
+        let UserToken = UserDefaults.standard.string(forKey: "user_token")
+        let url = "http://localhost:5002/reduceproductfromcart"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(UserToken!)"
+        ]
+        let body: [String : Any] = [
+            "product_id" : product_id
+        ]
+        
+        AF.request(url, method: .patch,  parameters: body, encoding: JSONEncoding.default, headers: headers).responseDecodable(of: ResMessage.self){ response in
+            if let resVal =  response.value{
+                switch response.response?.statusCode{
+                case 200:
+                    print("successful 200 \(resVal.message)")
+                    
+                case 404:
+                    print("unsuccessful 404 \(resVal.message)")
+                    
+                case 422:
+                    print("unsuccessful 422 \(resVal.message)")
+                    
+                case 500:
+                    print("unsuccessful 500 \(resVal.message)")
+                    
+                default:
+                    print("something went wrong")
+                }
+            }
+            else{
+                print("respone.value undefined")
+            }
+        }
+        
+    }
 }
 
 
