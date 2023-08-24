@@ -5,7 +5,7 @@ struct UserDetailsPage: View {
     @State private var goToHomePage = false
     @ObservedObject var userDataMVVM = UserDataMVVM()
     @Environment(\.presentationMode) var presentationMode
-    @StateObject var logoutNVVVM = LogOutNVVM()
+    @StateObject var logoutNVVVM = LogOutMVVM()
     @State var logout = false
     var body: some View {
         GeometryReader{ geo in

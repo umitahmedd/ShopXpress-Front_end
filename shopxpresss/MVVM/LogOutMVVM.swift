@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LogOutNVVM:ObservableObject{
+class LogOutMVVM:ObservableObject{
     @Published var logOut = false
     
     func logout(){

@@ -12,8 +12,8 @@ class ProductInCart:Decodable , Identifiable{
     var product_count: Int?
     var product_name: String?
     var product_description: String?
-    var product_price: String?
-    var product_total_price: String?
+    var product_price: Decimal?
+    var product_total_price: Decimal?
     var seller_name: String?
     var product_publish_date:String?
     var color:String?
@@ -22,7 +22,7 @@ class ProductInCart:Decodable , Identifiable{
                 
     }
     
-    init(product_id: Int? = nil, product_count: Int? = nil, product_name: String? = nil, product_description: String? = nil, product_price: String? = nil, product_total_price: String? = nil, seller_name: String? = nil, product_publish_date: String? = nil, color: String? = nil) {
+    init(product_id: Int? = nil, product_count: Int? = nil, product_name: String? = nil, product_description: String? = nil, product_price: Decimal? = nil, product_total_price: Decimal? = nil, seller_name: String? = nil, product_publish_date: String? = nil, color: String? = nil) {
         self.product_id = product_id
         self.product_count = product_count
         self.product_name = product_name

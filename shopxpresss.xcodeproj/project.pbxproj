@@ -35,21 +35,21 @@
 		045A6FDC2A74839900395150 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 045A6FDB2A74839900395150 /* OFL.txt */; };
 		045A6FE02A748AB500395150 /* CustomizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A6FDF2A748AB500395150 /* CustomizeButton.swift */; };
 		0474748D2A8005C10077D0F2 /* ProductInCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474748C2A8005C10077D0F2 /* ProductInCart.swift */; };
-		0474748F2A8037130077D0F2 /* CartNVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474748E2A8037130077D0F2 /* CartNVVM.swift */; };
+		0474748F2A8037130077D0F2 /* CartMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474748E2A8037130077D0F2 /* CartMVVM.swift */; };
 		047B13752A77B1D100160AAF /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B13742A77B1D100160AAF /* Authentication.swift */; };
 		047B137B2A77C7CC00160AAF /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B137A2A77C7CC00160AAF /* TokenResponse.swift */; };
 		047B137F2A77CEEE00160AAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B137E2A77CEEE00160AAF /* User.swift */; };
-		047B13812A77DF4E00160AAF /* LogOutNVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B13802A77DF4E00160AAF /* LogOutNVVM.swift */; };
+		047B13812A77DF4E00160AAF /* LogOutMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B13802A77DF4E00160AAF /* LogOutMVVM.swift */; };
 		049F35352A7B14B300CE2524 /* OrdersPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F35342A7B14B300CE2524 /* OrdersPage.swift */; };
 		04CF2B542A844DCB004CC2EB /* ProductInFavories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF2B532A844DCB004CC2EB /* ProductInFavories.swift */; };
-		04CF2B562A844EF1004CC2EB /* FavoritesNVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF2B552A844EF1004CC2EB /* FavoritesNVVM.swift */; };
+		04CF2B562A844EF1004CC2EB /* FavoritesMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF2B552A844EF1004CC2EB /* FavoritesMVVM.swift */; };
 		04F9E4272A752E0E00D5B81B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9E4262A752E0E00D5B81B /* Login.swift */; };
 		04F9E4292A753F2600D5B81B /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9E4282A753F2600D5B81B /* Register.swift */; };
 		04F9E42C2A75467D00D5B81B /* RegisterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9E42B2A75467D00D5B81B /* RegisterResult.swift */; };
 		04F9E42F2A75624700D5B81B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04F9E42E2A75624700D5B81B /* Alamofire */; };
-		04F9E4332A75665300D5B81B /* RegisterNVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9E4322A75665300D5B81B /* RegisterNVVM.swift */; };
+		04F9E4332A75665300D5B81B /* RegisterMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9E4322A75665300D5B81B /* RegisterMVVM.swift */; };
 		04F9E4372A7568A800D5B81B /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9E4362A7568A800D5B81B /* RegisterResponse.swift */; };
-		04F9E4392A757FB600D5B81B /* LoginNVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9E4382A757FB600D5B81B /* LoginNVVM.swift */; };
+		04F9E4392A757FB600D5B81B /* LoginMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9E4382A757FB600D5B81B /* LoginMVVM.swift */; };
 		04F9E43B2A758EC900D5B81B /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9E43A2A758EC900D5B81B /* HomePage.swift */; };
 		04FA5B972A818DD700282870 /* ResMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA5B962A818DD700282870 /* ResMessage.swift */; };
 /* End PBXBuildFile section */
@@ -85,20 +85,20 @@
 		045A6FDB2A74839900395150 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		045A6FDF2A748AB500395150 /* CustomizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeButton.swift; sourceTree = "<group>"; };
 		0474748C2A8005C10077D0F2 /* ProductInCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInCart.swift; sourceTree = "<group>"; };
-		0474748E2A8037130077D0F2 /* CartNVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartNVVM.swift; sourceTree = "<group>"; };
+		0474748E2A8037130077D0F2 /* CartMVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartMVVM.swift; sourceTree = "<group>"; };
 		047B13742A77B1D100160AAF /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		047B137A2A77C7CC00160AAF /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		047B137E2A77CEEE00160AAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		047B13802A77DF4E00160AAF /* LogOutNVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutNVVM.swift; sourceTree = "<group>"; };
+		047B13802A77DF4E00160AAF /* LogOutMVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutMVVM.swift; sourceTree = "<group>"; };
 		049F35342A7B14B300CE2524 /* OrdersPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersPage.swift; sourceTree = "<group>"; };
 		04CF2B532A844DCB004CC2EB /* ProductInFavories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInFavories.swift; sourceTree = "<group>"; };
-		04CF2B552A844EF1004CC2EB /* FavoritesNVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNVVM.swift; sourceTree = "<group>"; };
+		04CF2B552A844EF1004CC2EB /* FavoritesMVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesMVVM.swift; sourceTree = "<group>"; };
 		04F9E4262A752E0E00D5B81B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		04F9E4282A753F2600D5B81B /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		04F9E42B2A75467D00D5B81B /* RegisterResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResult.swift; sourceTree = "<group>"; };
-		04F9E4322A75665300D5B81B /* RegisterNVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNVVM.swift; sourceTree = "<group>"; };
+		04F9E4322A75665300D5B81B /* RegisterMVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMVVM.swift; sourceTree = "<group>"; };
 		04F9E4362A7568A800D5B81B /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
-		04F9E4382A757FB600D5B81B /* LoginNVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNVVM.swift; sourceTree = "<group>"; };
+		04F9E4382A757FB600D5B81B /* LoginMVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMVVM.swift; sourceTree = "<group>"; };
 		04F9E43A2A758EC900D5B81B /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		04FA5B962A818DD700282870 /* ResMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,12 +237,12 @@
 		04F9E4312A75629E00D5B81B /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				04F9E4322A75665300D5B81B /* RegisterNVVM.swift */,
+				04F9E4322A75665300D5B81B /* RegisterMVVM.swift */,
 				047B137E2A77CEEE00160AAF /* User.swift */,
-				04F9E4382A757FB600D5B81B /* LoginNVVM.swift */,
-				047B13802A77DF4E00160AAF /* LogOutNVVM.swift */,
-				0474748E2A8037130077D0F2 /* CartNVVM.swift */,
-				04CF2B552A844EF1004CC2EB /* FavoritesNVVM.swift */,
+				04F9E4382A757FB600D5B81B /* LoginMVVM.swift */,
+				047B13802A77DF4E00160AAF /* LogOutMVVM.swift */,
+				0474748E2A8037130077D0F2 /* CartMVVM.swift */,
+				04CF2B552A844EF1004CC2EB /* FavoritesMVVM.swift */,
 				043C826A2A86B78300B42EE1 /* UserDataMVVM.swift */,
 				044FC97F2A8CF6010036532A /* HomePageMVVM.swift */,
 			);
@@ -366,7 +366,7 @@
 				043C826B2A86B78300B42EE1 /* UserDataMVVM.swift in Sources */,
 				047B137F2A77CEEE00160AAF /* User.swift in Sources */,
 				04CF2B542A844DCB004CC2EB /* ProductInFavories.swift in Sources */,
-				04F9E4332A75665300D5B81B /* RegisterNVVM.swift in Sources */,
+				04F9E4332A75665300D5B81B /* RegisterMVVM.swift in Sources */,
 				041425C22A786BFE00FF37ED /* HistoryPage.swift in Sources */,
 				0474748D2A8005C10077D0F2 /* ProductInCart.swift in Sources */,
 				041425C02A786BF300FF37ED /* CartPage.swift in Sources */,
@@ -375,16 +375,16 @@
 				045A6FB22A747C7200395150 /* shopxpresssApp.swift in Sources */,
 				0441F78D2A7BA3E500587C97 /* ChangePasswordPage.swift in Sources */,
 				044FC9802A8CF6010036532A /* HomePageMVVM.swift in Sources */,
-				04CF2B562A844EF1004CC2EB /* FavoritesNVVM.swift in Sources */,
+				04CF2B562A844EF1004CC2EB /* FavoritesMVVM.swift in Sources */,
 				04F9E42C2A75467D00D5B81B /* RegisterResult.swift in Sources */,
 				04F9E4272A752E0E00D5B81B /* Login.swift in Sources */,
 				04F9E43B2A758EC900D5B81B /* HomePage.swift in Sources */,
-				047B13812A77DF4E00160AAF /* LogOutNVVM.swift in Sources */,
+				047B13812A77DF4E00160AAF /* LogOutMVVM.swift in Sources */,
 				04F9E4292A753F2600D5B81B /* Register.swift in Sources */,
 				045A6FE02A748AB500395150 /* CustomizeButton.swift in Sources */,
-				0474748F2A8037130077D0F2 /* CartNVVM.swift in Sources */,
+				0474748F2A8037130077D0F2 /* CartMVVM.swift in Sources */,
 				0433E1442A7904BC009E62ED /* TabBar.swift in Sources */,
-				04F9E4392A757FB600D5B81B /* LoginNVVM.swift in Sources */,
+				04F9E4392A757FB600D5B81B /* LoginMVVM.swift in Sources */,
 				04FA5B972A818DD700282870 /* ResMessage.swift in Sources */,
 				045A6FC62A747F4800395150 /* FontsManager.swift in Sources */,
 				043C826D2A86F85000B42EE1 /* AuthenticationResponse.swift in Sources */,

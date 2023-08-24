@@ -19,6 +19,7 @@ struct HomePage: View {
     @State var searched = ""
     @State var seachToggle = false
     @ObservedObject var homeMVVM = HomePageMVVM()
+    @ObservedObject var favoritesMVVM = FavoritesMVVM()
     var body: some View {
         GeometryReader{ geo in
             let geoW = geo.size.width
@@ -107,7 +108,7 @@ struct HomePage: View {
                                     ScrollView(.horizontal, showsIndicators: false) {
                                         HStack{
                                             ForEach(homeMVVM.products, id : \.product_id){ product in
-                                                HomePageProduct(image: "iphone", name: product.product_name!, description: product.product_description!, price: product.product_price!)
+                                                HomePageProduct( product_id: product.product_id!, favorite_state: favoritesMVVM.favoriteids.contains(product.product_id!) ? true : false, image: "iphone", name: product.product_name!, description: product.product_description!, price: product.product_price!)
                                             }
                                         }
                                     }
@@ -126,16 +127,16 @@ struct HomePage: View {
                                     Text("Popular products")
                                     ScrollView(.horizontal, showsIndicators: false) {
                                         HStack{
-                                            HomePageProduct(image: "iphone", name: "Iphone X", description: "lorem ipsum dolor sit amet", price: "900,99")
-                                            HomePageProduct(image: "bullet", name: "0.55 Bullet", description: "lorem ipsum dolor sit amet", price: "20,55")
-                                            HomePageProduct(image: "macbook", name: "Macbook Air M1", description: "lorem ipsum dolor sit amet", price: "2299,99")
-                                            HomePageProduct(image: "breads", name: "Bread", description: "lorem ipsum dolor sit amet", price: "2")
-                                            HomePageProduct(image: "applewatch", name: "Apple Watch Series 4", description: "lorem ipsum dolor sit amet", price: "499,9")
-                                            HomePageProduct(image: "iphone", name: "Iphone X", description: "lorem ipsum dolor sit amet", price: "900,99")
-                                            HomePageProduct(image: "bullet", name: "0.55 Bullet", description: "lorem ipsum dolor sit amet", price: "20,55")
-                                            HomePageProduct(image: "macbook", name: "Macbook Air M1", description: "lorem ipsum dolor sit amet", price: "2299,99")
-                                            HomePageProduct(image: "breads", name: "Bread", description: "lorem ipsum dolor sit amet", price: "2")
-                                            HomePageProduct(image: "applewatch", name: "Apple Watch Series 4", description: "lorem ipsum dolor sit amet", price: "499,9")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "iphone", name: "Iphone X", description: "lorem ipsum dolor sit amet", price: "900,99")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "bullet", name: "0.55 Bullet", description: "lorem ipsum dolor sit amet", price: "20,55")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "macbook", name: "Macbook Air M1", description: "lorem ipsum dolor sit amet", price: "2299,99")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "breads", name: "Bread", description: "lorem ipsum dolor sit amet", price: "2")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "applewatch", name: "Apple Watch Series 4", description: "lorem ipsum dolor sit amet", price: "499,9")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "iphone", name: "Iphone X", description: "lorem ipsum dolor sit amet", price: "900,99")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "bullet", name: "0.55 Bullet", description: "lorem ipsum dolor sit amet", price: "20,55")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "macbook", name: "Macbook Air M1", description: "lorem ipsum dolor sit amet", price: "2299,99")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "breads", name: "Bread", description: "lorem ipsum dolor sit amet", price: "2")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "applewatch", name: "Apple Watch Series 4", description: "lorem ipsum dolor sit amet", price: "499,9")
                                         }
                                     }
                                 }
@@ -155,20 +156,15 @@ struct HomePage: View {
                 }
                 .onAppear{
                     homeMVVM.getProducts()
+                    favoritesMVVM.getFavoriteIds()
                     let appearance = UINavigationBarAppearance()
                     appearance.backgroundColor = .white
                     appearance.shadowColor = .white
-                }
-                .preferredColorScheme(.light)
-                .onAppear{
-                    let appearance = UINavigationBarAppearance()
-                    appearance.backgroundColor = .white
-                    appearance.shadowColor = .white
-                    homeMVVM.getProducts()
                     UISearchBar.appearance().backgroundColor = UIColor.white
                     UISearchBar.appearance().tintColor = UIColor.white
                     UISearchBar.appearance().barTintColor = UIColor.white
                 }
+                .preferredColorScheme(.light)
                 .toolbar{
 
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -232,11 +228,18 @@ struct HomePageAd: View{
             
         }
         .frame(width: .infinity)
+        .padding(.top)
         
     }
 }
 
 struct HomePageProduct: View{
+    @State var animateHeart = false
+    private let feedbackGenerator = UINotificationFeedbackGenerator()
+    let generator = UIImpactFeedbackGenerator(style: .rigid)
+    @ObservedObject var favoritesMVVM = FavoritesMVVM()
+    var product_id:Int
+    @State var favorite_state:Bool?
     var image = ""
     var name = ""
     var description = ""
@@ -304,10 +307,16 @@ struct HomePageProduct: View{
         .frame(maxWidth: 180)
         .overlay(alignment: .topTrailing) {
             Button {
-                
+                favoritesMVVM.favoriteToggle(product_id: product_id)
+                withAnimation(Animation.easeInOut(duration: 0.3).repeatCount(1, autoreverses: true)) {
+                    animateHeart.toggle()
+                    favorite_state?.toggle()
+                }
+                generator.impactOccurred()
+
             } label: {
                 VStack{
-                    Image("Favories")
+                    Image(favorite_state == true ? "FavoriesFill" : "Favories")
                         .resizable()
                         .frame(width: 18, height: 18)
                         .padding(5)

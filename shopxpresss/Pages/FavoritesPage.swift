@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct FavoritesPage: View {
-    @ObservedObject var favoritesNVVM = FavoritesNVVM()
-    @ObservedObject var cartMVVM = CartNVVM()
-    func ondelete(index: IndexSet){
-        let favorite_id = favoritesNVVM.favorites[index.first!].favorite_id
-        favoritesNVVM.deleteFavorite(favorite_id: favorite_id!)
+    @ObservedObject var favoritesMVVM = FavoritesMVVM()
+    @ObservedObject var cartMVVM = CartMVVM()
+    
+    func OnDelete(index: IndexSet) {
+        let productIdToDelete = favoritesMVVM.favorites[index.first!].product_id
+        print("\(productIdToDelete!)")
+        favoritesMVVM.favoriteToggle(product_id: productIdToDelete!)
     }
+    
     func addtocart(product_id: Int ){
         cartMVVM.addToCart(product_id: product_id)
         print(product_id)
@@ -26,7 +29,7 @@ struct FavoritesPage: View {
                 ZStack {
                     VStack(spacing: 0){
                         List{
-                            ForEach(favoritesNVVM.favorites, id: \.favorite_id){favorite in
+                            ForEach(favoritesMVVM.favorites, id: \.product_id){favorite in
                                 let favorite_product_id = favorite.product_id;
                                 VStack{
                                     HStack(spacing: 14){
@@ -93,23 +96,6 @@ struct FavoritesPage: View {
 
                                                             }
                                                             .buttonStyle(BorderlessButtonStyle())
-                                                    
-                                                    Button(action: {
-                                                            }) {
-                                                                Text("Remove")
-                                                                    .padding(.vertical, 10)
-                                                                    .padding(.horizontal, 20)
-                                                                    .font(.system(size: 15))
-                                                                    .foregroundColor(.black)
-                                                                    .background(.white)
-                                                                    .cornerRadius(5)
-                                                                    .overlay(
-                                                                    RoundedRectangle(cornerRadius: 5)
-                                                                        .stroke(Color(red: 93/255, green: 93/255, blue: 93/255), lineWidth: CGFloat(0.3))
-                                                                    )
-
-                                                            }
-                                                            .buttonStyle(BorderlessButtonStyle())
                                                 }
                                             }
                                         }
@@ -117,7 +103,7 @@ struct FavoritesPage: View {
                                 }
                                 .padding(.vertical, 10)
                             }
-                            .onDelete(perform: ondelete )
+                            .onDelete(perform: OnDelete)
                         }
                         .listStyle(.inset)
                     }
@@ -126,7 +112,7 @@ struct FavoritesPage: View {
                 .background(Color.white)
                 .navigationBarTitle("Favorites", displayMode: .inline)
                 .onAppear {
-                    favoritesNVVM.getFavorites()
+                    favoritesMVVM.getFavorites()
                     let appearance = UINavigationBarAppearance()
                     appearance.backgroundColor = .white
                     appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]

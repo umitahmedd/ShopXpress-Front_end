@@ -13,7 +13,7 @@ struct Login: View {
     @State private var isPasswordVisible = true
     @State private var goToRegisterPage = false
     @State private var showUserNonError = false
-    @StateObject var loginMVVM = LoginNVVM()
+    @StateObject var loginMVVM = LoginMVVM()
     var body: some View {
         GeometryReader { geo in
             let geoW = geo.size.width

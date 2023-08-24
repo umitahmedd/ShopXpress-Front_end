@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class LoginNVVM: ObservableObject{
+class LoginMVVM: ObservableObject{
     @Published var loginResult = false
     @Published var invalidCredentials = false
     @Published var isUser = true
@@ -27,7 +27,7 @@ class LoginNVVM: ObservableObject{
                     self.loginResult = true
                     let UserToken = loginResponse.user_token
                     UserDefaults.standard.set( UserToken, forKey: "user_token")
-                    print(UserToken)
+                    print(UserToken!)
                     return
                 }
                 if res.response?.statusCode == 400{

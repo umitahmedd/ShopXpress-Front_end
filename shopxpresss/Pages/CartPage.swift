@@ -1,12 +1,12 @@
 import SwiftUI
 struct CartPage: View {
     @State var selectedProducts = [Int]()
-    @ObservedObject var cartNVVM = CartNVVM()
-    
+    @ObservedObject var cartMVVM = CartMVVM()
+    @State var totals:Decimal?
     func OnDelete(index: IndexSet) {
-        let productIdToDelete = cartNVVM.products[index.first!].product_id
+        let productIdToDelete = cartMVVM.products[index.first!].product_id
         print("\(productIdToDelete!)")
-        cartNVVM.deleteProductFromCart(product_id: productIdToDelete!)
+        cartMVVM.deleteProductFromCart(product_id: productIdToDelete!)
     }
     
     func checkProduct(index: Int?){
@@ -20,6 +20,14 @@ struct CartPage: View {
         }
     }
     
+    func calculateTotalsWithReduce() {
+        totals = cartMVVM.products.reduce(0.00) { (currentTotal, product) -> Decimal in
+            let price = product.product_price ?? Decimal(0.00)
+            let count = product.product_count ?? 0
+            return currentTotal + (price * Decimal(count))
+        }
+    }
+    
     var body: some View {
         GeometryReader { geo in
             let geoW = geo.size.width
@@ -28,7 +36,7 @@ struct CartPage: View {
                 ZStack {
                     VStack {
                         List{
-                            ForEach(cartNVVM.products, id: \.product_id) { product in
+                            ForEach(cartMVVM.products, id: \.product_id) { product in
                                 VStack {
                                     HStack {
                                         HStack {
@@ -103,7 +111,7 @@ struct CartPage: View {
                                                 .frame(height: 0)
                                             HStack {
                                                 Button(action: {
-                                                    cartNVVM.ReduceProductFromCart(product_id: product.product_id!)
+                                                    cartMVVM.ReduceProductFromCart(product_id: product.product_id!)
                                                         }) {
                                                             Image(systemName: "minus.circle")
                                                                 .font(.system(size: 25))
@@ -133,7 +141,7 @@ struct CartPage: View {
                                                         .font(.system(size: 22))
                                                         .foregroundColor(.black)
                                                     
-                                                    Text(product.product_total_price ?? "non")
+                                                    Text("\(NSDecimalNumber(decimal: product.product_total_price ?? Decimal(0.00)))")
                                                         .font(.system(size: 17))
                                                         .foregroundColor(Color(red: 93/255, green: 93/255, blue: 93/255))
                                                 }
@@ -167,7 +175,7 @@ struct CartPage: View {
                                         Text("$")
                                             .font(.system(size: 20))
                                         
-                                        Text("1362")
+                                        Text("\(NSDecimalNumber(decimal: totals ?? Decimal(0.00)))")
                                             .font(.system(size: 20))
                                             .foregroundColor(Color(red: 93/255, green: 93/255, blue: 93/255))
                                     }
@@ -194,7 +202,8 @@ struct CartPage: View {
                 .background(Color.white)
                 .navigationBarTitle("My Cart", displayMode: .inline)
                 .onAppear {
-                    cartNVVM.getProducts()
+                    cartMVVM.getProducts()
+                    calculateTotalsWithReduce()
                     let appearance = UINavigationBarAppearance()
                     appearance.backgroundColor = .white
                     appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]

@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class RegisterNVVM: ObservableObject{
+class RegisterMVVM: ObservableObject{
     @Published var result = false
     @Published var isUser = false
     func register(user_name: String,user_mail: String, user_password: String){

@@ -14,7 +14,7 @@ struct Register: View {
     @State private var username = ""
     @State private var isPasswordVisible = true
     @State private var gotToLoginPage = false
-    @ObservedObject var registerMVVM = RegisterNVVM()
+    @ObservedObject var registerMVVM = RegisterMVVM()
     var body: some View {
         GeometryReader { geo in
             let geoW = geo.size.width

@@ -12,7 +12,7 @@ class ResProduct: Decodable{
     var products: [ProductInCart]?
 }
 
-class CartNVVM: ObservableObject{
+class CartMVVM: ObservableObject{
     @Published var products = [ProductInCart]()
     
     func getProducts(){
@@ -63,6 +63,7 @@ class CartNVVM: ObservableObject{
                 switch statusCode {
                     case 200:
                         print("Ürün başarıyla silindi.")
+                        self.getProducts()
                     default:
                         print("Ürün silme işlemi başarısız oldu.")
                 }
@@ -146,6 +147,8 @@ class CartNVVM: ObservableObject{
         }
         
     }
+    
+    
 }
 
 
