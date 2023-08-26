@@ -73,7 +73,7 @@
 		04FF7F5B2A9A9A700056CA03 /* CategoryBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F5A2A9A9A700056CA03 /* CategoryBox.swift */; };
 		04FF7F5D2A9A9BA00056CA03 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F5C2A9A9BA00056CA03 /* Product.swift */; };
 		04FF7F5F2A9A9BE00056CA03 /* HomeCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F5E2A9A9BE00056CA03 /* HomeCategories.swift */; };
-		04FF7F612A9A9C620056CA03 /* CloseKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F602A9A9C620056CA03 /* CloseKeyboard.swift */; };
+		04FF7F632A9AB6F00056CA03 /* CloseKeyborard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F622A9AB6F00056CA03 /* CloseKeyborard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,7 +144,7 @@
 		04FF7F5A2A9A9A700056CA03 /* CategoryBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBox.swift; sourceTree = "<group>"; };
 		04FF7F5C2A9A9BA00056CA03 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		04FF7F5E2A9A9BE00056CA03 /* HomeCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategories.swift; sourceTree = "<group>"; };
-		04FF7F602A9A9C620056CA03 /* CloseKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseKeyboard.swift; sourceTree = "<group>"; };
+		04FF7F622A9AB6F00056CA03 /* CloseKeyborard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseKeyborard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,7 +259,7 @@
 				0490E5042A98DC9500E125C8 /* RoundedToTwoDecimalPlaces.swift */,
 				04FF7F2D2A99F8100056CA03 /* ColorPallete.swift */,
 				04FF7F2F2A9A02740056CA03 /* PasswordStyle.swift */,
-				04FF7F602A9A9C620056CA03 /* CloseKeyboard.swift */,
+				04FF7F622A9AB6F00056CA03 /* CloseKeyborard.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -504,6 +504,7 @@
 				045A6FC12A747CEF00395150 /* FirstPage.swift in Sources */,
 				041425BE2A786BE500FF37ED /* UserDetails.swift in Sources */,
 				04FF7F3D2A9A42C50056CA03 /* LoginBottomText.swift in Sources */,
+				04FF7F632A9AB6F00056CA03 /* CloseKeyborard.swift in Sources */,
 				0441F7872A7BA2F200587C97 /* AdressPage.swift in Sources */,
 				0441F7852A7BA2E800587C97 /* UserDataPage.swift in Sources */,
 				04FF7F2E2A99F8100056CA03 /* ColorPallete.swift in Sources */,
@@ -532,7 +533,6 @@
 				04FF7F302A9A02740056CA03 /* PasswordStyle.swift in Sources */,
 				04FF7F5F2A9A9BE00056CA03 /* HomeCategories.swift in Sources */,
 				04CF2B562A844EF1004CC2EB /* FavoritesWebS.swift in Sources */,
-				04FF7F612A9A9C620056CA03 /* CloseKeyboard.swift in Sources */,
 				04F9E42C2A75467D00D5B81B /* RegisterResult.swift in Sources */,
 				04FF7F3F2A9A44140056CA03 /* DividerLine.swift in Sources */,
 				04F9E4272A752E0E00D5B81B /* Login.swift in Sources */,
