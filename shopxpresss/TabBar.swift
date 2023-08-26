@@ -40,7 +40,7 @@ struct TabBar: View {
                                     }
                                 }
                             Text("\(tab.rawValue)")
-                                .foregroundColor(selectedTab == tab ?Color(red: 42/255, green: 210/255, blue: 195/255) :Color(red: 93/255, green: 93/255, blue: 93/255))
+                                .foregroundColor(selectedTab == tab ? Color.spPrimary :Color(red: 93/255, green: 93/255, blue: 93/255))
                                 .font(.system(size: 10))
                                 
                         }

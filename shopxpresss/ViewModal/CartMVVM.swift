@@ -14,6 +14,7 @@ class ResProduct: Decodable{
 
 class CartMVVM: ObservableObject{
     @Published var products = [ProductInCart]()
+    @Published var totals:Decimal?
     
     func getProducts(){
         let UserToken = UserDefaults.standard.string(forKey: "user_token")
@@ -22,13 +23,14 @@ class CartMVVM: ObservableObject{
             "Authorization": "Bearer \(UserToken!)"
         ]
         
-        AF.request(url, method: .get, headers: headers).responseDecodable(of: ResProduct.self) { res in
+        AF.request(url, method: .get, headers: headers).responseDecodable(of: ResProduct.self) { [self] res in
             if let httpRes = res.response{
                 if httpRes.statusCode == 200{
                     print("status code = \(httpRes.statusCode)")
                     if let data = res.value{
                         if let products = data.products {
                             self.products = products
+                            self.calculateTotalsWithReduce()
                             print("veriler aktarildi")
                         }
                         else{
@@ -45,6 +47,18 @@ class CartMVVM: ObservableObject{
             }
         }
 
+    }
+    
+    func calculateTotalsWithReduce() {
+      var totalsf = products.reduce(0.00) { (currentTotal, product) -> Decimal in
+            let price = product.product_price ?? Decimal(0.00)
+            print(" price: \(price) ")
+            let count = product.product_count ?? 0
+            print(" count: \(count) ")
+            return currentTotal + (price * Decimal(count))
+        }
+        totals = totalsf
+        print("totalsf: \(totalsf)")
     }
     
     func deleteProductFromCart(product_id: Int){

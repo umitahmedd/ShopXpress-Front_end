@@ -108,7 +108,7 @@ struct HomePage: View {
                                     ScrollView(.horizontal, showsIndicators: false) {
                                         HStack{
                                             ForEach(homeMVVM.products, id : \.product_id){ product in
-                                                HomePageProduct( product_id: product.product_id!, favorite_state: favoritesMVVM.favoriteids.contains(product.product_id!) ? true : false, image: "iphone", name: product.product_name!, description: product.product_description!, price: product.product_price!)
+                                                HomePageProduct( product_id: product.product_id!, favorite_state: favoritesMVVM.favoriteids.contains(product.product_id!) ? true : false, image: "iphone", name: product.product_name!, description: product.product_description!, price: "\(product.product_price?.roundedToTwoDecimalPlaces ?? 0)")
                                             }
                                         }
                                     }
@@ -127,16 +127,16 @@ struct HomePage: View {
                                     Text("Popular products")
                                     ScrollView(.horizontal, showsIndicators: false) {
                                         HStack{
-                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "iphone", name: "Iphone X", description: "lorem ipsum dolor sit amet", price: "900,99")
-                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "bullet", name: "0.55 Bullet", description: "lorem ipsum dolor sit amet", price: "20,55")
-                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "macbook", name: "Macbook Air M1", description: "lorem ipsum dolor sit amet", price: "2299,99")
-                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "breads", name: "Bread", description: "lorem ipsum dolor sit amet", price: "2")
-                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "applewatch", name: "Apple Watch Series 4", description: "lorem ipsum dolor sit amet", price: "499,9")
-                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "iphone", name: "Iphone X", description: "lorem ipsum dolor sit amet", price: "900,99")
-                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "bullet", name: "0.55 Bullet", description: "lorem ipsum dolor sit amet", price: "20,55")
-                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "macbook", name: "Macbook Air M1", description: "lorem ipsum dolor sit amet", price: "2299,99")
-                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "breads", name: "Bread", description: "lorem ipsum dolor sit amet", price: "2")
-                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "applewatch", name: "Apple Watch Series 4", description: "lorem ipsum dolor sit amet", price: "499,9")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "iphone", name: "Iphone X", description: "lorem ipsum dolor sit amet", price: "5749.99")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "bullet", name: "0.55 Bullet", description: "lorem ipsum dolor sit amet", price: "5749.99")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "macbook", name: "Macbook Air M1", description: "lorem ipsum dolor sit amet", price: "5749.99")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "breads", name: "Bread", description: "lorem ipsum dolor sit amet", price: "5749.99")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "applewatch", name: "Apple Watch Series 4", description: "lorem ipsum dolor sit amet", price: "5749.99")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "iphone", name: "Iphone X", description: "lorem ipsum dolor sit amet", price: "5749.99")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "bullet", name: "0.55 Bullet", description: "lorem ipsum dolor sit amet", price: "5749.99")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "macbook", name: "Macbook Air M1", description: "lorem ipsum dolor sit amet", price: "5749.99")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "breads", name: "Bread", description: "lorem ipsum dolor sit amet", price: "5749.99")
+                                            HomePageProduct(product_id: 1 , favorite_state: false, image: "applewatch", name: "Apple Watch Series 4", description: "lorem ipsum dolor sit amet", price: "5749.99")
                                         }
                                     }
                                 }
@@ -194,8 +194,6 @@ struct HomePage: View {
                 .padding(.bottom, 50)
             }
         }
-
-        
     }
 }
 
@@ -273,15 +271,15 @@ struct HomePageProduct: View{
                 //Product Star
                 HStack(spacing: 1){
                     Image(systemName: "star.fill")
-                        .foregroundColor(Color(red: 42/255, green: 210/255, blue: 195/255))
+                        .foregroundColor(.spPrimary)
                     Image(systemName: "star.fill")
-                        .foregroundColor(Color(red: 42/255, green: 210/255, blue: 195/255))
+                        .foregroundColor(.spPrimary)
                     Image(systemName: "star.fill")
-                        .foregroundColor(Color(red: 42/255, green: 210/255, blue: 195/255))
+                        .foregroundColor(.spPrimary)
                     Image(systemName: "star.fill")
-                        .foregroundColor(Color(red: 42/255, green: 210/255, blue: 195/255))
+                        .foregroundColor(.spPrimary)
                     Image(systemName: "star.fill")
-                        .foregroundColor(Color(red: 42/255, green: 210/255, blue: 195/255))
+                        .foregroundColor(.spPrimary)
                 }
                 .padding(.bottom, 2)
                 
@@ -301,7 +299,7 @@ struct HomePageProduct: View{
         .background(.white)
         .overlay(
         RoundedRectangle(cornerRadius: 10)
-            .stroke(Color(red: 42/255, green: 210/255, blue: 195/255), lineWidth: 0.3)
+            .stroke(Color.spPrimary, lineWidth: 0.3)
         )
         .cornerRadius(10)
         .frame(maxWidth: 180)
@@ -355,7 +353,7 @@ struct Category: View{
             .cornerRadius(10)
             .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .stroke(Color(red: 42/255, green: 210/255, blue: 195/255), lineWidth: 0.3)
+                .stroke(Color.spPrimary, lineWidth: 0.3)
             )
 
             Text(name)

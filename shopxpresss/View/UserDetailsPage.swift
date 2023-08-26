@@ -53,7 +53,7 @@ struct UserDetailsPage: View {
                                                 .fontWeight(.bold)
                                         }
                                         .frame(width: geoW, height: geoH/3.5)
-                                        .background(LinearGradient(gradient: Gradient(colors: [Color(red: 42/255, green: 210/255, blue: 195/255),.white]), startPoint: .bottom, endPoint: .top) )
+                                        .background(LinearGradient(gradient: Gradient(colors: [.spPrimary,.white]), startPoint: .bottom, endPoint: .top) )
                                     }
                                     
                                 Spacer()
@@ -187,7 +187,7 @@ struct ListElement: View {
             Spacer()
             
             Image(systemName:"chevron.right")
-                .foregroundColor(Color(red: 42/255, green: 210/255, blue: 195/255))
+                .foregroundColor(.spPrimary)
         }
         .padding(.horizontal, 15)
         .padding(.vertical, 15)

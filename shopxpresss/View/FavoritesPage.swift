@@ -60,15 +60,15 @@ struct FavoritesPage: View {
                                                 
                                                 HStack(spacing:2){
                                                     Image(systemName: "star.fill")
-                                                        .foregroundColor(Color(red: 42/255, green: 210/255, blue: 195/255))
+                                                        .foregroundColor(Color.spPrimary)
                                                     Image(systemName: "star.fill")
-                                                        .foregroundColor(Color(red: 42/255, green: 210/255, blue: 195/255))
+                                                        .foregroundColor(Color.spPrimary)
                                                     Image(systemName: "star.fill")
-                                                        .foregroundColor(Color(red: 42/255, green: 210/255, blue: 195/255))
+                                                        .foregroundColor(Color.spPrimary)
                                                     Image(systemName: "star.fill")
-                                                        .foregroundColor(Color(red: 42/255, green: 210/255, blue: 195/255))
+                                                        .foregroundColor(Color.spPrimary)
                                                     Image(systemName: "star.fill")
-                                                        .foregroundColor(Color(red: 42/255, green: 210/255, blue: 195/255))
+                                                        .foregroundColor(Color.spPrimary)
                                                 }
                                             }
 
@@ -78,8 +78,9 @@ struct FavoritesPage: View {
                                                     Text("$")
                                                         .font(.system(size: 20))
                                                         .fontWeight(.semibold)
-                                                    Text(favorite.product_price!)
+                                                    Text("\(NSDecimalNumber(decimal: (favorite.product_price ?? Decimal(0.00)).roundedToTwoDecimalPlaces))")
                                                         .foregroundColor(Color(red: 93/255, green: 93/255, blue: 93/255))
+
                                                 }
                                                 
                                                 HStack{
@@ -91,7 +92,7 @@ struct FavoritesPage: View {
                                                                     .padding(.horizontal, 30)
                                                                     .font(.system(size: 15))
                                                                     .foregroundColor(.white)
-                                                                    .background(Color(red: 42/255, green: 210/255, blue: 195/255))
+                                                                    .background(Color.spPrimary)
                                                                     .cornerRadius(5)
 
                                                             }

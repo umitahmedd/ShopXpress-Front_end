@@ -11,9 +11,10 @@ import Alamofire
 class LoginMVVM: ObservableObject{
     @Published var loginResult = false
     @Published var invalidCredentials = false
-    @Published var isUser = true
+    @Published var isUser:Bool?
 
     func login(user_mail: String, user_password: String){
+        print(user_mail, user_password)
         let url = "http://localhost:5002/login"; // ip 192.168.1.102
         let data: [String:Any] = [
             "user_mail": user_mail,

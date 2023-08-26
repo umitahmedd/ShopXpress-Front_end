@@ -164,7 +164,7 @@ struct Register: View {
                                     gotToLoginPage = true
                                 }label: {
                                     Text("Login Now")
-                                        .foregroundColor(Color(red: 42/255, green: 210/255, blue: 195/255))
+                                        .foregroundColor(Color.spPrimary)
                                         .font(.custom(FontsManager.HindSiliguri.semibold, size: 17))
                                 }
                             }

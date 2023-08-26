@@ -19,15 +19,6 @@ struct CartPage: View {
             selectedProducts.remove( at: index!)
         }
     }
-    
-    func calculateTotalsWithReduce() {
-        totals = cartMVVM.products.reduce(0.00) { (currentTotal, product) -> Decimal in
-            let price = product.product_price ?? Decimal(0.00)
-            let count = product.product_count ?? 0
-            return currentTotal + (price * Decimal(count))
-        }
-    }
-    
     var body: some View {
         GeometryReader { geo in
             let geoW = geo.size.width
@@ -48,7 +39,7 @@ struct CartPage: View {
                                         Spacer()
                                         Text("Free cargo")
                                             .bold()
-                                            .foregroundColor(Color(red: 42/255, green: 210/255, blue: 195/255))
+                                            .foregroundColor(Color.spPrimary)
                                     }
                                     .padding(.horizontal, 7)
                                     .padding(.trailing, 12)
@@ -65,7 +56,7 @@ struct CartPage: View {
                                                     }
                                                     .buttonStyle(BorderlessButtonStyle()) // Bu satırı ekleyin
                                                     
-                                            Image("iphone")
+                                            Image("applewatch")
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(width: 95, height: 130)
@@ -105,7 +96,7 @@ struct CartPage: View {
 
                                                 Text("Est Deli: About two days")
                                                     .font(.system(size: 15))
-                                                    .foregroundColor(Color(red: 42/255, green: 210/255, blue: 195/255))
+                                                    .foregroundColor(Color.spPrimary)
                                             }
                                             Spacer()
                                                 .frame(height: 0)
@@ -141,7 +132,7 @@ struct CartPage: View {
                                                         .font(.system(size: 22))
                                                         .foregroundColor(.black)
                                                     
-                                                    Text("\(NSDecimalNumber(decimal: product.product_total_price ?? Decimal(0.00)))")
+                                                    Text("\(NSDecimalNumber(decimal: product.product_total_price?.roundedToTwoDecimalPlaces ?? Decimal(0.00)))")
                                                         .font(.system(size: 17))
                                                         .foregroundColor(Color(red: 93/255, green: 93/255, blue: 93/255))
                                                 }
@@ -166,7 +157,7 @@ struct CartPage: View {
                             HStack {
                                 Image(systemName: "circle.fill")
                                     .font(.system(size: 10))
-                                    .foregroundColor((Color(red: 42/255, green: 210/255, blue: 195/255)))
+                                    .foregroundColor(Color.spPrimary)
                                 VStack(alignment: .leading, spacing: 0) {
                                     Text("Totals")
                                         .font(.system(size: 16))
@@ -175,7 +166,7 @@ struct CartPage: View {
                                         Text("$")
                                             .font(.system(size: 20))
                                         
-                                        Text("\(NSDecimalNumber(decimal: totals ?? Decimal(0.00)))")
+                                        Text("\(NSDecimalNumber(decimal: cartMVVM.totals?.roundedToTwoDecimalPlaces ?? Decimal(0.00)))")
                                             .font(.system(size: 20))
                                             .foregroundColor(Color(red: 93/255, green: 93/255, blue: 93/255))
                                     }
@@ -189,7 +180,7 @@ struct CartPage: View {
                             }
                             .padding(.vertical, 10)
                             .padding(.horizontal, 10)
-                            .background(Color(red: 42/255, green: 210/255, blue: 195/255))
+                            .background(Color.spPrimary)
                             .cornerRadius(10)
                             .font(.custom(FontsManager.HindSiliguri.semibold, size: 15))
                             .foregroundColor(.white)
@@ -203,7 +194,6 @@ struct CartPage: View {
                 .navigationBarTitle("My Cart", displayMode: .inline)
                 .onAppear {
                     cartMVVM.getProducts()
-                    calculateTotalsWithReduce()
                     let appearance = UINavigationBarAppearance()
                     appearance.backgroundColor = .white
                     appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
