@@ -3,9 +3,9 @@ import SwiftUI
 struct UserDetailsPage: View {
     @State private var goToLoginPage = false
     @State private var goToHomePage = false
-    @ObservedObject var userDataMVVM = UserDataMVVM()
+    @ObservedObject var userWebS = UserWebS()
     @Environment(\.presentationMode) var presentationMode
-    @StateObject var logoutNVVVM = LogOutMVVM()
+    @StateObject var logOutMVVM = LogOutMVVM()
     @State var logout = false
     var body: some View {
         GeometryReader{ geo in
@@ -14,7 +14,7 @@ struct UserDetailsPage: View {
             NavigationView {
                 ZStack{
                     VStack{
-                        if userDataMVVM.succes == false { //  !auth!burayi boyle
+                        if userWebS.succes == false { //  !auth!burayi boyle
                             VStack(spacing: 20){
                                 VStack{
                                     Text("Login")
@@ -38,7 +38,7 @@ struct UserDetailsPage: View {
                             }
                         }
                         
-                        if userDataMVVM.succes == true {
+                        if userWebS.succes == true {
                             ScrollView(.vertical, showsIndicators: true){
                                 VStack{
                                         VStack{
@@ -47,7 +47,7 @@ struct UserDetailsPage: View {
                                                 .frame(width:80, height: 80)
                                                 .cornerRadius(50)
                                             
-                                            Text("\(userDataMVVM.userData.user_name ?? "Andrew Tate")")
+                                            Text("\(userWebS.userData.user_name ?? "Andrew Tate")")
                                                 .foregroundColor(.black)
                                                 .font(.system(size: 30))
                                                 .fontWeight(.bold)
@@ -103,7 +103,7 @@ struct UserDetailsPage: View {
                                         
                                         VStack{
                                             Button{
-                                                logoutNVVVM.logout()
+                                                logOutMVVM.logout()
                                                 logout = true
                                             }label: {
                                                 
@@ -151,7 +151,7 @@ struct UserDetailsPage: View {
                     }
                 }
                 .onAppear{
-                    userDataMVVM.getUserData()
+                    userWebS.getUserData()
                 }
                 .fullScreenCover(isPresented: $goToHomePage){
                     HomePage()

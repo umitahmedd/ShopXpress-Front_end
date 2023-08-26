@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class LoginMVVM: ObservableObject{
+class LoginWebS: ObservableObject{
     @Published var loginResult = false
     @Published var invalidCredentials = false
     @Published var isUser:Bool?

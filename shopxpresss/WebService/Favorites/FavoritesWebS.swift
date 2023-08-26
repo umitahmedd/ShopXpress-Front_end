@@ -15,7 +15,7 @@ class ResFavoriteIds: Decodable{
     var product_ids: [Int]?
     var message: String?
 }
-class FavoritesMVVM: ObservableObject{
+class FavoritesWebS: ObservableObject{
     @Published var favorites = [ProductInFavorites]()
     @Published var favoriteids = [Int]()
     

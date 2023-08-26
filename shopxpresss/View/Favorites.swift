@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct FavoritesPage: View {
-    @ObservedObject var favoritesMVVM = FavoritesMVVM()
-    @ObservedObject var cartMVVM = CartMVVM()
+    @ObservedObject var favoritesWebS = FavoritesWebS()
+    @ObservedObject var cartWebS = CartWebS()
     
     func OnDelete(index: IndexSet) {
-        let productIdToDelete = favoritesMVVM.favorites[index.first!].product_id
+        let productIdToDelete = favoritesWebS.favorites[index.first!].product_id
         print("\(productIdToDelete!)")
-        favoritesMVVM.favoriteToggle(product_id: productIdToDelete!)
+        favoritesWebS.favoriteToggle(product_id: productIdToDelete!)
     }
     
     func addtocart(product_id: Int ){
-        cartMVVM.addToCart(product_id: product_id)
+        cartWebS.addToCart(product_id: product_id)
         print(product_id)
     }
     var body: some View {
@@ -29,7 +29,7 @@ struct FavoritesPage: View {
                 ZStack {
                     VStack(spacing: 0){
                         List{
-                            ForEach(favoritesMVVM.favorites, id: \.product_id){favorite in
+                            ForEach(favoritesWebS.favorites, id: \.product_id){favorite in
                                 let favorite_product_id = favorite.product_id;
                                 VStack{
                                     HStack(spacing: 14){
@@ -113,7 +113,7 @@ struct FavoritesPage: View {
                 .background(Color.white)
                 .navigationBarTitle("Favorites", displayMode: .inline)
                 .onAppear {
-                    favoritesMVVM.getFavorites()
+                    favoritesWebS.getFavorites()
                     let appearance = UINavigationBarAppearance()
                     appearance.backgroundColor = .white
                     appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]

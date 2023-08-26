@@ -1,5 +1,5 @@
 //
-//  HomePageMVVM.swift
+//  HomeWebS.swift
 //  shopxpresss
 //
 //  Created by mac on 16.08.2023.
@@ -9,11 +9,11 @@ import Foundation
 import  Alamofire
 
 class ResProducts:Decodable{
-    var products = [Product]()
+    var products = [ProductModal]()
 }
 
-class HomePageMVVM: ObservableObject{
-    @Published var products = [Product]()
+class HomeWebS: ObservableObject{
+    @Published var products = [ProductModal]()
     @Published var productsIsEmpty:Bool?
     
     func getProducts(){

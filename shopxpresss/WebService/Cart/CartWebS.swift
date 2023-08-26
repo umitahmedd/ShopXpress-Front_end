@@ -12,9 +12,21 @@ class ResProduct: Decodable{
     var products: [ProductInCart]?
 }
 
-class CartMVVM: ObservableObject{
+class CartWebS: ObservableObject{
     @Published var products = [ProductInCart]()
     @Published var totals:Decimal?
+    
+    func calculateTotalsWithReduce() {
+      var totalsf = products.reduce(0.00) { (currentTotal, product) -> Decimal in
+            let price = product.product_price ?? Decimal(0.00)
+            print(" price: \(price) ")
+            let count = product.product_count ?? 0
+            print(" count: \(count) ")
+            return currentTotal + (price * Decimal(count))
+        }
+        totals = totalsf
+        print("totalsf: \(totalsf)")
+    } // modal view
     
     func getProducts(){
         let UserToken = UserDefaults.standard.string(forKey: "user_token")
@@ -47,18 +59,6 @@ class CartMVVM: ObservableObject{
             }
         }
 
-    }
-    
-    func calculateTotalsWithReduce() {
-      var totalsf = products.reduce(0.00) { (currentTotal, product) -> Decimal in
-            let price = product.product_price ?? Decimal(0.00)
-            print(" price: \(price) ")
-            let count = product.product_count ?? 0
-            print(" count: \(count) ")
-            return currentTotal + (price * Decimal(count))
-        }
-        totals = totalsf
-        print("totalsf: \(totalsf)")
     }
     
     func deleteProductFromCart(product_id: Int){

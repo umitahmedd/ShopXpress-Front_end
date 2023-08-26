@@ -13,16 +13,16 @@ struct LoginForm: View {
     @State private var isPasswordVisible = true
     @State private var goToRegisterPage = false
     @State private var showUserNonError:Bool?
-    @StateObject var loginMVVM = LoginMVVM()
+    @StateObject var loginWebS = LoginWebS()
     var geoW:CGFloat
     var body: some View{
         VStack(spacing:15){
             VStack(spacing: 5){
                 //Email
-                CustomizeTextField(text: $email, borderColor: loginMVVM.isUser == false ? .red : nil, lineWidth: loginMVVM.isUser == false ? 0.5 : nil)
+                CustomizeTextField(text: $email, borderColor: loginWebS.isUser == false ? .red : nil, lineWidth: loginWebS.isUser == false ? 0.5 : nil)
                 
                 //Error Control
-                loginMVVM.isUser == false
+                loginWebS.isUser == false
                 && email != ""
                 ? withAnimation(Animation.easeInOut(duration: 0.3).repeatCount(1, autoreverses: true)) {
                     HStack{
@@ -50,7 +50,7 @@ struct LoginForm: View {
             }
             
             //Invalid Credentials Error
-            loginMVVM.invalidCredentials
+            loginWebS.invalidCredentials
             && password != ""
             && email != ""
             ? HStack{
@@ -78,9 +78,9 @@ struct LoginForm: View {
                     text: "Login",
                     width: geoW/1.1,
                     action:  {
-                        loginMVVM.login(user_mail: email, user_password: password)
+                        loginWebS.login(user_mail: email, user_password: password)
                         
-                        if loginMVVM.isUser == false {
+                        if loginWebS.isUser == false {
                             showUserNonError = true
                             //Turn off error after 5 seconds
                             Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
@@ -91,8 +91,8 @@ struct LoginForm: View {
                 )
             }
         }
-        .fullScreenCover(isPresented: $loginMVVM.loginResult){
-            ContentView(guesMode: false, isLogin: loginMVVM.loginResult)
+        .fullScreenCover(isPresented: $loginWebS.loginResult){
+            ContentView(guesMode: false, isLogin: loginWebS.loginResult)
         }
     }
     

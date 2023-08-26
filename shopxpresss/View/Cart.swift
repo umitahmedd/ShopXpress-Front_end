@@ -1,12 +1,12 @@
 import SwiftUI
 struct CartPage: View {
     @State var selectedProducts = [Int]()
-    @ObservedObject var cartMVVM = CartMVVM()
+    @ObservedObject var cartWebS = CartWebS()
     @State var totals:Decimal?
     func OnDelete(index: IndexSet) {
-        let productIdToDelete = cartMVVM.products[index.first!].product_id
+        let productIdToDelete = cartWebS.products[index.first!].product_id
         print("\(productIdToDelete!)")
-        cartMVVM.deleteProductFromCart(product_id: productIdToDelete!)
+        cartWebS.deleteProductFromCart(product_id: productIdToDelete!)
     }
     
     func checkProduct(index: Int?){
@@ -27,7 +27,7 @@ struct CartPage: View {
                 ZStack {
                     VStack {
                         List{
-                            ForEach(cartMVVM.products, id: \.product_id) { product in
+                            ForEach(cartWebS.products, id: \.product_id) { product in
                                 VStack {
                                     HStack {
                                         HStack {
@@ -102,7 +102,7 @@ struct CartPage: View {
                                                 .frame(height: 0)
                                             HStack {
                                                 Button(action: {
-                                                    cartMVVM.ReduceProductFromCart(product_id: product.product_id!)
+                                                    cartWebS.ReduceProductFromCart(product_id: product.product_id!)
                                                         }) {
                                                             Image(systemName: "minus.circle")
                                                                 .font(.system(size: 25))
@@ -166,7 +166,7 @@ struct CartPage: View {
                                         Text("$")
                                             .font(.system(size: 20))
                                         
-                                        Text("\(NSDecimalNumber(decimal: cartMVVM.totals?.roundedToTwoDecimalPlaces ?? Decimal(0.00)))")
+                                        Text("\(NSDecimalNumber(decimal: cartWebS.totals?.roundedToTwoDecimalPlaces ?? Decimal(0.00)))")
                                             .font(.system(size: 20))
                                             .foregroundColor(Color(red: 93/255, green: 93/255, blue: 93/255))
                                     }
@@ -193,7 +193,7 @@ struct CartPage: View {
                 .background(Color.white)
                 .navigationBarTitle("My Cart", displayMode: .inline)
                 .onAppear {
-                    cartMVVM.getProducts()
+                    cartWebS.getProducts()
                     let appearance = UINavigationBarAppearance()
                     appearance.backgroundColor = .white
                     appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]

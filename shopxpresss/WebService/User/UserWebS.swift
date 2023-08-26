@@ -1,5 +1,5 @@
 //
-//  UserDataMVVM.swift
+//  UserWebS.swift
 //  shopxpresss
 //
 //  Created by mac on 11.08.2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 import Alamofire
-class UserDataMVVM: ObservableObject {
+class UserWebS: ObservableObject {
     @Published var userData = User()
     @Published var succes:Bool?
 

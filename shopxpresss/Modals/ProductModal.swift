@@ -7,17 +7,13 @@
 
 import Foundation
 
-class Product:Decodable , Identifiable{
+class ProductModal:Decodable , Identifiable{
     var product_id: Int?
     var product_name: String?
     var product_description: String?
     var product_price: Decimal?
     var product_publish_date:String?
     var color:String?
-    
-    init() {
-                
-    }
     
     init(product_id: Int? = nil, product_name: String? = nil, product_description: String? = nil, product_price: Decimal? = nil, product_publish_date: String? = nil, color: String? = nil) {
         self.product_id = product_id
