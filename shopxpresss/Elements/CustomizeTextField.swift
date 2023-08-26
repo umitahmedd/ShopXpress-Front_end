@@ -19,9 +19,10 @@ struct CustomizeTextField: View {
     var borderColor: Color?
     var lineWidth: CGFloat?
     var cornerRadius: CGFloat?
+    var placeholder: String?
 
     var body: some View {
-        TextField("Enter your email", text: $text)
+        TextField("\(placeholder ?? "Enter your email")", text: $text)
             .padding(.vertical, paddingV ?? 15)
             .padding(.horizontal, paddingH ?? 10)
             .foregroundColor(foreground ?? .black)

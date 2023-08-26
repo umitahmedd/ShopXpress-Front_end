@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		041425BE2A786BE500FF37ED /* UserDetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041425BD2A786BE500FF37ED /* UserDetailsPage.swift */; };
-		041425C02A786BF300FF37ED /* CartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041425BF2A786BF300FF37ED /* CartPage.swift */; };
-		041425C22A786BFE00FF37ED /* HistoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041425C12A786BFE00FF37ED /* HistoryPage.swift */; };
-		041425C42A786C0C00FF37ED /* FavoritesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041425C32A786C0C00FF37ED /* FavoritesPage.swift */; };
+		041425BE2A786BE500FF37ED /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041425BD2A786BE500FF37ED /* UserDetails.swift */; };
+		041425C02A786BF300FF37ED /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041425BF2A786BF300FF37ED /* Cart.swift */; };
+		041425C22A786BFE00FF37ED /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041425C12A786BFE00FF37ED /* History.swift */; };
+		041425C42A786C0C00FF37ED /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041425C32A786C0C00FF37ED /* Favorites.swift */; };
 		0433E1442A7904BC009E62ED /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433E1432A7904BC009E62ED /* TabBar.swift */; };
 		043C826B2A86B78300B42EE1 /* UserDataMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C826A2A86B78300B42EE1 /* UserDataMVVM.swift */; };
 		043C826D2A86F85000B42EE1 /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C826C2A86F85000B42EE1 /* AuthenticationResponse.swift */; };
@@ -51,18 +51,27 @@
 		04F9E4332A75665300D5B81B /* RegisterMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9E4322A75665300D5B81B /* RegisterMVVM.swift */; };
 		04F9E4372A7568A800D5B81B /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9E4362A7568A800D5B81B /* RegisterResponse.swift */; };
 		04F9E4392A757FB600D5B81B /* LoginMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9E4382A757FB600D5B81B /* LoginMVVM.swift */; };
-		04F9E43B2A758EC900D5B81B /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9E43A2A758EC900D5B81B /* HomePage.swift */; };
+		04F9E43B2A758EC900D5B81B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9E43A2A758EC900D5B81B /* Home.swift */; };
 		04FA5B972A818DD700282870 /* ResMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA5B962A818DD700282870 /* ResMessage.swift */; };
 		04FF7F2E2A99F8100056CA03 /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F2D2A99F8100056CA03 /* ColorPallete.swift */; };
 		04FF7F302A9A02740056CA03 /* PasswordStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F2F2A9A02740056CA03 /* PasswordStyle.swift */; };
 		04FF7F322A9A04430056CA03 /* CustomizeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F312A9A04430056CA03 /* CustomizeTextField.swift */; };
+		04FF7F342A9A409F0056CA03 /* InputClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F332A9A409F0056CA03 /* InputClass.swift */; };
+		04FF7F372A9A41F50056CA03 /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F362A9A41F50056CA03 /* LoginForm.swift */; };
+		04FF7F392A9A42730056CA03 /* LoginTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F382A9A42730056CA03 /* LoginTitle.swift */; };
+		04FF7F3B2A9A428F0056CA03 /* LoginSocialMedias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F3A2A9A428F0056CA03 /* LoginSocialMedias.swift */; };
+		04FF7F3D2A9A42C50056CA03 /* LoginBottomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F3C2A9A42C50056CA03 /* LoginBottomText.swift */; };
+		04FF7F3F2A9A44140056CA03 /* DividerLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F3E2A9A44140056CA03 /* DividerLine.swift */; };
+		04FF7F422A9A62E10056CA03 /* RegisterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F412A9A62E10056CA03 /* RegisterForm.swift */; };
+		04FF7F442A9A630A0056CA03 /* RegisterTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F432A9A630A0056CA03 /* RegisterTitle.swift */; };
+		04FF7F462A9A63250056CA03 /* RegisterBottomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF7F452A9A63250056CA03 /* RegisterBottomText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		041425BD2A786BE500FF37ED /* UserDetailsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPage.swift; sourceTree = "<group>"; };
-		041425BF2A786BF300FF37ED /* CartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPage.swift; sourceTree = "<group>"; };
-		041425C12A786BFE00FF37ED /* HistoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPage.swift; sourceTree = "<group>"; };
-		041425C32A786C0C00FF37ED /* FavoritesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPage.swift; sourceTree = "<group>"; };
+		041425BD2A786BE500FF37ED /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
+		041425BF2A786BF300FF37ED /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		041425C12A786BFE00FF37ED /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		041425C32A786C0C00FF37ED /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		0433E1432A7904BC009E62ED /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		043C826A2A86B78300B42EE1 /* UserDataMVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataMVVM.swift; sourceTree = "<group>"; };
 		043C826C2A86F85000B42EE1 /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
@@ -104,11 +113,20 @@
 		04F9E4322A75665300D5B81B /* RegisterMVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMVVM.swift; sourceTree = "<group>"; };
 		04F9E4362A7568A800D5B81B /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		04F9E4382A757FB600D5B81B /* LoginMVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMVVM.swift; sourceTree = "<group>"; };
-		04F9E43A2A758EC900D5B81B /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		04F9E43A2A758EC900D5B81B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		04FA5B962A818DD700282870 /* ResMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResMessage.swift; sourceTree = "<group>"; };
 		04FF7F2D2A99F8100056CA03 /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		04FF7F2F2A9A02740056CA03 /* PasswordStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStyle.swift; sourceTree = "<group>"; };
 		04FF7F312A9A04430056CA03 /* CustomizeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeTextField.swift; sourceTree = "<group>"; };
+		04FF7F332A9A409F0056CA03 /* InputClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputClass.swift; sourceTree = "<group>"; };
+		04FF7F362A9A41F50056CA03 /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
+		04FF7F382A9A42730056CA03 /* LoginTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTitle.swift; sourceTree = "<group>"; };
+		04FF7F3A2A9A428F0056CA03 /* LoginSocialMedias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSocialMedias.swift; sourceTree = "<group>"; };
+		04FF7F3C2A9A42C50056CA03 /* LoginBottomText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomText.swift; sourceTree = "<group>"; };
+		04FF7F3E2A9A44140056CA03 /* DividerLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerLine.swift; sourceTree = "<group>"; };
+		04FF7F412A9A62E10056CA03 /* RegisterForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterForm.swift; sourceTree = "<group>"; };
+		04FF7F432A9A630A0056CA03 /* RegisterTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTitle.swift; sourceTree = "<group>"; };
+		04FF7F452A9A63250056CA03 /* RegisterBottomText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBottomText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,13 +200,13 @@
 				049F35332A7B149E00CE2524 /* UserDetailsPages */,
 				04F9E42A2A75466200D5B81B /* RgisterResultPage */,
 				045A6FC02A747CEF00395150 /* FirstPage.swift */,
-				04F9E4262A752E0E00D5B81B /* Login.swift */,
-				04F9E43A2A758EC900D5B81B /* HomePage.swift */,
-				041425BD2A786BE500FF37ED /* UserDetailsPage.swift */,
-				041425BF2A786BF300FF37ED /* CartPage.swift */,
-				041425C12A786BFE00FF37ED /* HistoryPage.swift */,
-				041425C32A786C0C00FF37ED /* FavoritesPage.swift */,
-				04F9E4282A753F2600D5B81B /* Register.swift */,
+				04FF7F352A9A41DC0056CA03 /* Login */,
+				041425BD2A786BE500FF37ED /* UserDetails.swift */,
+				04FF7F402A9A62C60056CA03 /* Register */,
+				04F9E43A2A758EC900D5B81B /* Home.swift */,
+				041425BF2A786BF300FF37ED /* Cart.swift */,
+				041425C12A786BFE00FF37ED /* History.swift */,
+				041425C32A786C0C00FF37ED /* Favorites.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -276,6 +294,8 @@
 				0474748C2A8005C10077D0F2 /* ProductInCart.swift */,
 				04CF2B532A844DCB004CC2EB /* ProductInFavories.swift */,
 				044FC97D2A8CF59B0036532A /* Product.swift */,
+				04FF7F332A9A409F0056CA03 /* InputClass.swift */,
+				04FF7F3E2A9A44140056CA03 /* DividerLine.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -289,6 +309,29 @@
 				043C826C2A86F85000B42EE1 /* AuthenticationResponse.swift */,
 			);
 			path = ResponseClasses;
+			sourceTree = "<group>";
+		};
+		04FF7F352A9A41DC0056CA03 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				04F9E4262A752E0E00D5B81B /* Login.swift */,
+				04FF7F382A9A42730056CA03 /* LoginTitle.swift */,
+				04FF7F362A9A41F50056CA03 /* LoginForm.swift */,
+				04FF7F3A2A9A428F0056CA03 /* LoginSocialMedias.swift */,
+				04FF7F3C2A9A42C50056CA03 /* LoginBottomText.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		04FF7F402A9A62C60056CA03 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				04F9E4282A753F2600D5B81B /* Register.swift */,
+				04FF7F432A9A630A0056CA03 /* RegisterTitle.swift */,
+				04FF7F412A9A62E10056CA03 /* RegisterForm.swift */,
+				04FF7F452A9A63250056CA03 /* RegisterBottomText.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,23 +419,28 @@
 			files = (
 				045A6FB42A747C7200395150 /* ContentView.swift in Sources */,
 				045A6FC12A747CEF00395150 /* FirstPage.swift in Sources */,
-				041425BE2A786BE500FF37ED /* UserDetailsPage.swift in Sources */,
+				041425BE2A786BE500FF37ED /* UserDetails.swift in Sources */,
+				04FF7F3D2A9A42C50056CA03 /* LoginBottomText.swift in Sources */,
 				0441F7872A7BA2F200587C97 /* AdressPage.swift in Sources */,
 				0441F7852A7BA2E800587C97 /* UserDataPage.swift in Sources */,
 				04FF7F2E2A99F8100056CA03 /* ColorPallete.swift in Sources */,
 				044FC97E2A8CF59B0036532A /* Product.swift in Sources */,
-				041425C42A786C0C00FF37ED /* FavoritesPage.swift in Sources */,
+				041425C42A786C0C00FF37ED /* Favorites.swift in Sources */,
 				047B137B2A77C7CC00160AAF /* TokenResponse.swift in Sources */,
 				0441F7892A7BA30200587C97 /* ChangeEmailPage.swift in Sources */,
+				04FF7F372A9A41F50056CA03 /* LoginForm.swift in Sources */,
 				04FF7F322A9A04430056CA03 /* CustomizeTextField.swift in Sources */,
 				043C826B2A86B78300B42EE1 /* UserDataMVVM.swift in Sources */,
 				047B137F2A77CEEE00160AAF /* User.swift in Sources */,
 				04CF2B542A844DCB004CC2EB /* ProductInFavories.swift in Sources */,
 				04F9E4332A75665300D5B81B /* RegisterMVVM.swift in Sources */,
-				041425C22A786BFE00FF37ED /* HistoryPage.swift in Sources */,
+				041425C22A786BFE00FF37ED /* History.swift in Sources */,
+				04FF7F462A9A63250056CA03 /* RegisterBottomText.swift in Sources */,
 				0474748D2A8005C10077D0F2 /* ProductInCart.swift in Sources */,
-				041425C02A786BF300FF37ED /* CartPage.swift in Sources */,
+				04FF7F342A9A409F0056CA03 /* InputClass.swift in Sources */,
+				041425C02A786BF300FF37ED /* Cart.swift in Sources */,
 				04F9E4372A7568A800D5B81B /* RegisterResponse.swift in Sources */,
+				04FF7F442A9A630A0056CA03 /* RegisterTitle.swift in Sources */,
 				047B13752A77B1D100160AAF /* Authentication.swift in Sources */,
 				045A6FB22A747C7200395150 /* shopxpresssApp.swift in Sources */,
 				0441F78D2A7BA3E500587C97 /* ChangePasswordPage.swift in Sources */,
@@ -400,17 +448,21 @@
 				04FF7F302A9A02740056CA03 /* PasswordStyle.swift in Sources */,
 				04CF2B562A844EF1004CC2EB /* FavoritesMVVM.swift in Sources */,
 				04F9E42C2A75467D00D5B81B /* RegisterResult.swift in Sources */,
+				04FF7F3F2A9A44140056CA03 /* DividerLine.swift in Sources */,
 				04F9E4272A752E0E00D5B81B /* Login.swift in Sources */,
-				04F9E43B2A758EC900D5B81B /* HomePage.swift in Sources */,
+				04F9E43B2A758EC900D5B81B /* Home.swift in Sources */,
 				047B13812A77DF4E00160AAF /* LogOutMVVM.swift in Sources */,
 				04F9E4292A753F2600D5B81B /* Register.swift in Sources */,
 				0490E5052A98DC9500E125C8 /* RoundedToTwoDecimalPlaces.swift in Sources */,
 				045A6FE02A748AB500395150 /* CustomizeButton.swift in Sources */,
+				04FF7F392A9A42730056CA03 /* LoginTitle.swift in Sources */,
 				0474748F2A8037130077D0F2 /* CartMVVM.swift in Sources */,
 				0433E1442A7904BC009E62ED /* TabBar.swift in Sources */,
 				04F9E4392A757FB600D5B81B /* LoginMVVM.swift in Sources */,
 				04FA5B972A818DD700282870 /* ResMessage.swift in Sources */,
 				045A6FC62A747F4800395150 /* FontsManager.swift in Sources */,
+				04FF7F422A9A62E10056CA03 /* RegisterForm.swift in Sources */,
+				04FF7F3B2A9A428F0056CA03 /* LoginSocialMedias.swift in Sources */,
 				043C826D2A86F85000B42EE1 /* AuthenticationResponse.swift in Sources */,
 				049F35352A7B14B300CE2524 /* OrdersPage.swift in Sources */,
 			);

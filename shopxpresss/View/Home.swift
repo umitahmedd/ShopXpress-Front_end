@@ -68,7 +68,7 @@ struct HomePage: View {
                                     seachToggle = true
                                 }
                         }
-                        .padding(.top, 5)
+                        .padding(.top, 15)
                         Spacer()
                         
                         //Content

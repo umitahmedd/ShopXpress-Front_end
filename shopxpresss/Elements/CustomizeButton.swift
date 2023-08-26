@@ -8,25 +8,30 @@
 import SwiftUI
 
 struct CustomizeButton: View {
-    var background: Color? = .black
-    var foreground: Color? = .white
-    var font: Font? = .system(size: 17)
-    var text: String? = "non"
-    var paddingV: CGFloat? = 15
-    var paddingH: CGFloat? = 0
-    var width: CGFloat? = 10
-    var border: Bool? = false
-    var borderColor: Color? = .black
-    var lineWidth: CGFloat? = 0.2
-    var cornerRadius: CGFloat? = 10
+    var background: Color?
+    var foreground: Color?
+    var font: Font?
+    var text: String?
+    var paddingV: CGFloat?
+    var paddingH: CGFloat?
+    var width: CGFloat?
+    var border: Bool?
+    var borderColor: Color?
+    var lineWidth: CGFloat?
+    var cornerRadius: CGFloat?
     var action: (() -> Void)?
+    var showAlert: Bool = false
+    @State private var isAlertPresented: Bool = false
+    var alertTitle: String?
+    var alertMessage: String?
+    var alertButton: Alert.Button?
 
     var body: some View {
         Button(action: {
-            if let action = self.action {
+            if showAlert {
+               isAlertPresented.toggle()
+           } else if let action = self.action {
                action()
-           } else {
-               print("Default action")
            }
         }) {
             Text(text ?? "non")
@@ -48,6 +53,13 @@ struct CustomizeButton: View {
                 }
             }
         )
+        .alert(isPresented: $isAlertPresented) {
+                    Alert(
+                        title: Text(alertTitle ?? "Alert Title"),
+                        message: Text(alertMessage ?? "Alert Messahe"),
+                        dismissButton: alertButton ?? .default(Text("OK"))
+                    )
+                }
     }
 }
 
