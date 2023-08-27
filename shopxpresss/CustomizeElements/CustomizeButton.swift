@@ -38,7 +38,7 @@ struct CustomizeButton: View {
                 .font(font ?? .system(size: 17))
                 .foregroundColor(foreground ?? .white)
         }
-        .frame(width: width ?? 10)
+        .frame(width: width ?? nil)
         .padding(.vertical, paddingV ?? 15)
         .padding(.horizontal, paddingH ?? 0)
         .background(background ?? .black)

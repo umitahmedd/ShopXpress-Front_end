@@ -17,36 +17,31 @@ struct HomePage: View {
          NavigationView{
             ZStack {
                VStack{
-                  
                   //Search Bar
                   SearchBar()
                   Spacer()
                   //Content
                   ScrollView(showsIndicators:false ){
-                     
-                     //Banner Ads
-                     BannerAds()
-                     
-                     //Categories
-                     HomeCategories()
-                     
-                     //Recent Product
-                     RecentProducts(homeWebS: homeWebS, favoritesWebS: favoritesWebS)
-                     
-                     //Homepage Ads
-                     VStack(spacing: 10){
-                        HomePageAd(image: "ad1")
-                        HomePageAd(image: "ad3")
-                     }
-                     
-                     //Popular Products
-                     PopularProducts(homeWebS: homeWebS, favoritesWebS: favoritesWebS)
-                     
-                     //Homepage Ads
-                     VStack(spacing: 10){
-                        HomePageAd(image: "ad4")
-                        HomePageAd(image: "ad5")
-                        HomePageAd(image: "ad6")
+                     VStack(spacing: 20){
+                        //Banner Ads
+                        BannerAds()
+                        //Categories
+                        HomeCategories()
+                        //Recent Product
+                        RecentProducts(homeWebS: homeWebS, favoritesWebS: favoritesWebS)
+                        //Homepage Ads
+                        VStack(spacing: 10){
+                           HomePageAd(image: "ad1")
+                           HomePageAd(image: "ad3")
+                        }
+                        //Popular Products
+                        PopularProducts(homeWebS: homeWebS, favoritesWebS: favoritesWebS)
+                        //Homepage Ads
+                        VStack(spacing: 10){
+                           HomePageAd(image: "ad4")
+                           HomePageAd(image: "ad5")
+                           HomePageAd(image: "ad6")
+                        }
                      }
                   }
                }
@@ -62,7 +57,6 @@ struct HomePage: View {
                         .foregroundColor(Color(red: 50/255, green: 50/255, blue: 90/255))
                   }
                }
-               
                //Adress
                ToolbarItem(placement: .navigationBarLeading) {
                   VStack(alignment: .leading){
@@ -73,7 +67,6 @@ struct HomePage: View {
                         .font(.system(size: 14))
                         .foregroundColor(.black)
                   }
-                  
                }
             }
             .background(Color.spGray20)
