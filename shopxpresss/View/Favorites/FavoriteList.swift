@@ -18,11 +18,12 @@ struct FavoriteList: View {
       self.favoritesMVVM = FavoritesMVVM(favoritesWebS: favoritesWebS)
    }
    var body: some View{
-      List{
-         ForEach(favoritesWebS.favorites, id: \.product_id){favorite in
-            let favorite_product_id = favorite.product_id;
-            VStack{
-               HStack(spacing: 14){
+      GeometryReader{ geo in
+         let geoW = geo.size.width
+         List{
+            ForEach(favoritesWebS.favorites, id: \.product_id){favorite in
+               let favorite_product_id = favorite.product_id;
+               HStack{
                   VStack{
                      Image("iphone")
                         .resizable()
@@ -75,12 +76,14 @@ struct FavoriteList: View {
                         .buttonStyle(BorderlessButtonStyle())
                      }
                   }
+                  Spacer()
                }
+               .padding(.top, 10)
+               .frame(width: geoW, height: nil)
             }
-            .padding(.top, 10)
+            .onDelete(perform: favoritesMVVM.onDelete)
          }
-         .onDelete(perform: favoritesMVVM.onDelete)
+         .listStyle(.inset)
       }
-      .listStyle(.inset)
    }
 }

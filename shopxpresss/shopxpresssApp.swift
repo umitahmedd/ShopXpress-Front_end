@@ -18,7 +18,6 @@ struct shopxpresssApp: App {
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemBackground]
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemBackground]
         navBarAppearance.backgroundColor = UIColor.orange
-
         timer = Timer.scheduledTimer(withTimeInterval: 900, repeats: true) { [self]_ in
             auth.authentication()
         }

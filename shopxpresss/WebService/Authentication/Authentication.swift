@@ -10,7 +10,7 @@ import Alamofire
 
 class Authentication: ObservableObject {
     @Published var authenticate:Bool?
-    @Published var userData:User = User() // Dizi yerine tek bir User nesnesi
+    @Published var userData:UserModal = UserModal() // Dizi yerine tek bir User nesnesi
 
     func authentication() {
         print("authentication calsiti")
@@ -19,8 +19,6 @@ class Authentication: ObservableObject {
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(UserToken!)"
         ]
-        
-        
         AF.request(url, method: .post, headers: headers).responseDecodable(of: AuthenticationRespose.self) { res in
             switch res.response?.statusCode{
                 

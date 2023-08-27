@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 class UserWebS: ObservableObject {
-    @Published var userData = User()
+    @Published var userData = UserModal()
     @Published var succes:Bool?
 
     func getUserData() {
@@ -19,12 +19,12 @@ class UserWebS: ObservableObject {
         ]
         
         
-        AF.request(url, method: .get, headers: headers).responseDecodable(of: User.self) { res in
+        AF.request(url, method: .get, headers: headers).responseDecodable(of: UserModal.self) { res in
             switch res.response?.statusCode {
             case 200:
                 self.succes = true
                 if let user = res.value{
-                    let userData = User(user_name: user.user_name, user_mail: user.user_mail, user_adress: user.user_adress)
+                    let userData = UserModal(user_name: user.user_name, user_mail: user.user_mail, user_adress: user.user_adress)
                     self.userData = userData
                     print("Username : \(user.user_name!)")
                 }

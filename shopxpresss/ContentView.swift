@@ -1,3 +1,10 @@
+//
+//  ContentView.swift
+//  shopxpresss
+//
+//  Created by mac on 27.08.2023.
+//
+
 import SwiftUI
 
 struct ContentView: View {
@@ -10,11 +17,11 @@ struct ContentView: View {
         ZStack {
             if auth == true || isLogin == true || guesMode == true {
                 switch selectedTab {
-                case .Home: HomePage()
-                case .Favories: FavoritesPage()
+                case .Home: Home()
+                case .Favories: Favorites()
                 case .History: HistoryPage()
-                case .Profile: UserDetailsPage()
-                case .Cart: CartPage()
+                case .Profile: User()
+                case .Cart: Cart()
                 }
                 TabBar(selectedTab: $selectedTab)
             } else {

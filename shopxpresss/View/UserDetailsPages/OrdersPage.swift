@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-
-struct OrdersPage: View {
+protocol PageView: View {}
+struct OrdersPage: View , PageView {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         GeometryReader { geo in

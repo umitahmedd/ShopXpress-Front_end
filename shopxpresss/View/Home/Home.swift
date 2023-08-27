@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomePage: View {
+struct Home: View {
    @ObservedObject var homeWebS = HomeWebS()
    @ObservedObject var favoritesWebS = FavoritesWebS()
    var body: some View {
@@ -19,6 +19,7 @@ struct HomePage: View {
                VStack{
                   //Search Bar
                   SearchBar()
+                     .padding(.vertical, 10)
                   Spacer()
                   //Content
                   ScrollView(showsIndicators:false ){
@@ -50,12 +51,7 @@ struct HomePage: View {
             .toolbar{
                //Notifications
                ToolbarItem(placement: .navigationBarTrailing) {
-                  Button{
-                  }label: {
-                     Image(systemName: "bell")
-                        .font(.system(size: 20))
-                        .foregroundColor(Color(red: 50/255, green: 50/255, blue: 90/255))
-                  }
+                  NotificationsButton()
                }
                //Adress
                ToolbarItem(placement: .navigationBarLeading) {
@@ -89,6 +85,6 @@ struct HomePage: View {
 
 struct HomePage_Previews: PreviewProvider {
    static var previews: some View {
-      HomePage()
+      Home()
    }
 }

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class User: Identifiable,Decodable{
+class UserModal: Identifiable,Decodable{
     var user_name: String?
     var user_mail: String?
     var user_adress: String?

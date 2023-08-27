@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavoritesPage: View {
+struct Favorites: View {
    @ObservedObject var favoritesWebS = FavoritesWebS()
    @ObservedObject var cartWebS = CartWebS()
 
@@ -41,6 +41,6 @@ struct FavoritesPage: View {
 
 struct FavoritesPage_Previews: PreviewProvider {
    static var previews: some View {
-      FavoritesPage()
+      Favorites()
    }
 }

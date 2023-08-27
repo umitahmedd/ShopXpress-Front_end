@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CartPage: View {
+struct Cart: View {
    @State var selectedProducts = [Int]()
    @ObservedObject var cartWebS = CartWebS()
    var body: some View {
@@ -31,6 +31,6 @@ struct CartPage: View {
 
 struct CartPage_Previews: PreviewProvider {
    static var previews: some View {
-      CartPage()
+      Cart()
    }
 }
