@@ -23,7 +23,6 @@ struct Favorites: View {
             .background(Color.white)
             .navigationBarTitle("Favorites", displayMode: .inline)
             .padding(.horizontal, 10)
-            .padding(.vertical, 10)
             .padding(.bottom, 60)
             .onAppear {
                favoritesWebS.getFavorites()

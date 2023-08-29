@@ -35,13 +35,14 @@ struct Product: View{
                .lineLimit(1)
                .fontWeight(.medium)
                .font(.system(size: 16))
+               .foregroundColor(.black)
             
             //Product Description
             Text(description)
                .lineLimit(2)
                .fontWeight(.light)
                .font(.system(size: 15))
-               .foregroundColor(Color(red: 95/255, green: 95/255, blue: 95/255))
+               .foregroundColor(Color.spGray400)
                .padding(.bottom, 2)
             
             //Product Star
@@ -57,7 +58,9 @@ struct Product: View{
                Text("$")
                   .font(.system(size: 20))
                   .fontWeight(.medium)
+                  .foregroundColor(.black)
                Text(price)
+                  .foregroundColor(.spGray400)
             }
          }
       }

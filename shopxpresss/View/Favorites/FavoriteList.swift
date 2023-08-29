@@ -24,7 +24,7 @@ struct FavoriteList: View {
             ForEach(favoritesWebS.favorites, id: \.product_id){favorite in
                let favorite_product_id = favorite.product_id;
                HStack{
-                  VStack{
+                  VStack(alignment: .leading){
                      Image("iphone")
                         .resizable()
                         .scaledToFit()
@@ -78,8 +78,8 @@ struct FavoriteList: View {
                   }
                   Spacer()
                }
-               .padding(.top, 10)
                .frame(width: geoW, height: nil)
+               .padding(.top, 10)
             }
             .onDelete(perform: favoritesMVVM.onDelete)
          }

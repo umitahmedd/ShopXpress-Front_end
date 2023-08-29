@@ -76,7 +76,6 @@ class FavoritesWebS: ObservableObject{
                         
                     default:
                         print("something went wrong")
-                        
                     }
                 }
             }

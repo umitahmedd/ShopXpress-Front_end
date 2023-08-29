@@ -19,7 +19,7 @@ struct ContentView: View {
                 switch selectedTab {
                 case .Home: Home()
                 case .Favories: Favorites()
-                case .History: HistoryPage()
+                case .History: History()
                 case .Profile: User()
                 case .Cart: Cart()
                 }

@@ -25,8 +25,6 @@ struct User: View {
                      }
                   }
                }
-               .navigationTitle("Account")
-               .navigationBarTitleDisplayMode(.inline)
                .foregroundColor(.white)
                //Toobar
                .toolbar{
@@ -34,16 +32,18 @@ struct User: View {
                      NotificationsButton()
                   }
                }
-               .onAppear {
-                  userWebS.getUserData()
-                  let appearance = UINavigationBarAppearance()
-                  appearance.backgroundColor = .white
-                  appearance.shadowColor = .white
-                  appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-                  UINavigationBar.appearance().standardAppearance = appearance
-                  UINavigationBar.appearance().scrollEdgeAppearance = appearance
-                  UINavigationBar.appearance().compactAppearance = appearance
-               }
+            }
+            .background(Color.white)
+            .navigationBarTitle("Account", displayMode: .inline)
+            .onAppear {
+               userWebS.getUserData()
+               let appearance = UINavigationBarAppearance()
+               appearance.backgroundColor = .white
+               appearance.shadowColor = .white
+               appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+               UINavigationBar.appearance().standardAppearance = appearance
+               UINavigationBar.appearance().scrollEdgeAppearance = appearance
+               UINavigationBar.appearance().compactAppearance = appearance
             }
             .fullScreenCover(isPresented: $goToHomePage){
                Home()
