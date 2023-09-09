@@ -17,7 +17,7 @@ class Authentication: ObservableObject {
         let UserToken = UserDefaults.standard.string(forKey: "user_token")
         let url = "http://localhost:5002/check-token"
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(UserToken!)"
+            "Authorization": "Bearer \(UserToken ?? "")"
         ]
         AF.request(url, method: .post, headers: headers).responseDecodable(of: AuthenticationRespose.self) { res in
             switch res.response?.statusCode{
