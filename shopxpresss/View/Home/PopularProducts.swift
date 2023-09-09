@@ -16,7 +16,17 @@ struct PopularProducts: View {
          ScrollView(.horizontal, showsIndicators: false) {
             HStack{
                ForEach(homeWebS.products, id : \.product_id){ product in
-                  NavigationLink(destination: ProductOverview(product_name: product.product_name, product_id: product.product_id)){
+                  NavigationLink(destination: ProductOverview(
+                     product: ProductReviewModal(
+                        product_id: product.product_id,
+                        product_name: product.product_name,
+                        product_description: product.product_description,
+                        product_price: product.product_price,
+                        product_publish_date:product.product_publish_date,
+                        color:product.color,
+                        favorite_state: favoritesWebS.favoriteids.contains(product.product_id!) ? true : false
+                     )
+                  )){
                      Product(
                         product_id: product.product_id!,
                         favorite_state: favoritesWebS.favoriteids.contains(product.product_id!) ? true : false,
