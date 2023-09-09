@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ProductInCart:Decodable , Identifiable{
+class ProductInCart: Identifiable{
    var product_id: Int?
    var product_name: String?
    var product_description: String?
@@ -17,8 +17,9 @@ class ProductInCart:Decodable , Identifiable{
    var product_total_price: Decimal?
    var seller_name: String?
    var product_count: Int?
+   var product_features: [String: Decodable]?
 
-   init(product_id: Int? = nil, product_name: String? = nil, product_description: String? = nil, product_price: Decimal? = nil, product_publish_date: String? = nil, color: String? = nil, product_total_price: Decimal? = nil, seller_name: String? = nil, product_count: Int? = nil) {
+   init(product_id: Int? = nil, product_name: String? = nil, product_description: String? = nil, product_price: Decimal? = nil, product_publish_date: String? = nil, color: String? = nil, product_total_price: Decimal? = nil, seller_name: String? = nil, product_count: Int? = nil,product_features:[String: Decodable]? = nil ) {
       self.product_id = product_id
       self.product_name = product_name
       self.product_description = product_description
@@ -28,6 +29,7 @@ class ProductInCart:Decodable , Identifiable{
       self.product_total_price = product_total_price
       self.seller_name = seller_name
       self.product_count = product_count
+      self.product_features = product_features
    }
    
 }
