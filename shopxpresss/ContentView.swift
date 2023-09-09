@@ -11,6 +11,7 @@ struct ContentView: View {
     var guesMode:Bool?
     var isLogin:Bool?
     var auth:Bool?
+   
 
     @State private var selectedTab: Tab = .Home
     var body: some View {
@@ -23,6 +24,7 @@ struct ContentView: View {
                 case .Profile: User()
                 case .Cart: Cart()
                 }
+               
                 TabBar(selectedTab: $selectedTab)
             } else {
                 FirstPage()
