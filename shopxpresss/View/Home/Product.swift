@@ -60,7 +60,7 @@ struct Product: View{
                   .fontWeight(.medium)
                   .foregroundColor(.black)
                Text(price)
-                  .foregroundColor(.spGray400)
+                  .foregroundColor(.spGray600)
             }
          }
       }
