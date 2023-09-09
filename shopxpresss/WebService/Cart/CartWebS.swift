@@ -42,6 +42,9 @@ class CartWebS: ObservableObject{
                     if let data = res.value{
                         if let products = data.products {
                             self.products = products
+                           if let features = products[0].product_features{
+                              print(features)
+                           }
                             self.calculateTotalsWithReduce()
                             print("veriler aktarildi")
                         }
